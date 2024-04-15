@@ -1,0 +1,31 @@
+{% extends "tekno/index.html" %}
+{% load static %}
+{% block content %}
+<div class="container fluid">
+    <form action="/signin/" method="POST">
+      {% csrf_token %}
+      <fieldset>
+        <legend class="tituloLogin text-center">LOG IN</legend>
+        <h4>
+            {{errorNeedLogin}}
+            {{errorSignin}}
+        </h4>
+        <div>
+          {% if alertUser == "true" %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="red" class="bi bi-exclamation" viewBox="0 0 16 16">
+            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.553.553 0 0 1-1.1 0z"/>
+          </svg>
+          {% endif %}
+          <label for="username" class="form-label mt-4">Username</label>
+          <input type="text" name="username1" class="form-control" id="username" placeholder="Username" autocomplete="off">
+        </div>
+          <label for="password1" class="form-label mt-4">Password</label>
+          <input type="password" class="p2 form-control" id="password1" name="password1" placeholder="Password" autocomplete="off">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow= "75" aria-valuemin="0" aria-valuemax="100" style="width: 100% ;"></div>
+        </div>
+        <button type="submit" class="submite btn btn-primary">Sign In</button>
+      </fieldset>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "tekno/index.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+	<h1 class="gamingtitle">
+		⚡THE BEST HARDWARE!⚡
+	</h1>
+    <fieldset>
+        <form class="buscadorgame d-flex" method="get">
+            <input class="buscador form-control form-control-lg" name="buscar" type="search" placeholder="Search your monitors here!">
+            <button class="buscador btn btn-secondary " type="submit">Search</button>
+        </form>
+    </fieldset>
+	<p></p>  
+    <div class="monitorrow row text-center">
+		{% for producto in productos %}		
+		<div class="col-lg-4">
+			<img class="monitores" style="border:5px solid #5cf0b2; padding:3px; margin:5px" src="{{producto.imagen.url}}" height="250" width="250">
+			<div class="box-element product">
+				<h4 class="nombremonitor"><strong>{{producto.nombre}}</strong></h4>
+				<h6 class="nombremonitor">{{producto.descripcion}}</h6>
+				<hr>
+
+				<button class="btn btn-outline-secondary add-btn">
+					<a href="">Add to cart</a>
+				</button>
+				
+				<a class="btn btn-outline-success" href="#">View</a>
+				<h4 class="nombremonitor"><strong>{{producto.precio}}€</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %} 

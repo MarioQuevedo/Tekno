@@ -1,0 +1,135 @@
+.titulo{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-size: large;
+    font-style: normal;
+    text-shadow: 5px 0 #000, -5px 0 #ffffff, 0 2px #000, 0 -2px #000,
+                 5px 1px #000, -5px -5px #000, 2px -1px #000, -1px 1px #000;
+    color: #5cf0b2;
+    letter-spacing: 0.5 cap;
+}
+
+.tituloLogin{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-size: 70px;
+    font-style: normal;
+    text-shadow: 5px 0 #000, -5px 0 #ffffff, 0 2px #000, 0 -2px #000,
+                 5px 1px #000, -5px -5px #000, 2px -1px #000, -1px 1px #000;
+    color: #5cf0b2;
+    letter-spacing:  25px;
+    margin-top: 50px;
+}
+
+.submite{
+    margin-top: 50px;
+}
+
+.p2{
+    margin-bottom: 15px;
+}
+
+.success{
+    margin-right: 100px;
+}
+
+.rows {
+    
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
+
+.gamezone {
+    margin: auto;
+}
+
+.hola{
+    margin-bottom: -80px;
+}
+
+.hola1{
+    margin-top: 20px;
+}
+
+.hola2{
+    margin-top: -40px;
+}
+
+.titleindex{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-size: 70px;
+    font-style: normal;
+    text-shadow: 5px 0 #000, -5px 0 #ffffff, 0 2px #000, 0 -2px #000,
+                 5px 1px #000, -5px -5px #000, 2px -1px #000, -1px 1px #000;
+    color: #5cf0b2;
+    letter-spacing: 0.1cap;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.productostitle{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-size: 60px;
+    font-style: normal;
+    text-shadow: 5px 0 #000, -5px 0 #ffffff, 0 2px #000, 0 -2px #000,
+                 5px 1px #000, -5px -5px #000, 2px -1px #000, -1px 1px #000;
+    color: #5cf0b2;
+    margin-top: 50px;
+    margin-left: 50px;
+    letter-spacing: 0.9cap;
+}
+
+.titlegaming{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 100;
+    font-size: 20px;
+    font-style: normal;
+    color: #d129e0;
+}
+
+.buscadorgame{
+    margin-top: 30px;
+    margin-left: 500px;
+    margin-right: 500px;
+}  
+
+.gamingsection{
+    margin-top: 30px;
+}
+
+.monitores{
+    box-shadow:
+	inset #009688 0 0 0 5px, 
+    inset #059c8e 0 0 0 1px, 
+    inset #0cab9c 0 0 0 10px, 
+    inset #1fbdae 0 0 0 11px, 
+    inset #8ce9ff 0 0 0 16px, 
+    inset #48e4d6 0 0 0 17px, 
+    inset #e5f9f7 0 0 0 21px, 
+    inset #bfecf7 0 0 0 22px;
+}
+
+.nombremonitor{
+    margin-top: 9px;
+}
+
+.buscador{
+    margin-bottom: 75px;
+}
+
+.gamingtitle{
+    text-align: center;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-size: 40px;
+    font-style: normal;
+    margin-top: 60px;
+}
+
+
