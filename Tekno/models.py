@@ -14,13 +14,3 @@ class Producto(models.Model):
     
     def __str__(self):
         return self.nombre
-    
-class Cliente(models.Model):
-    user = models.OneToOneField(User, null = True, on_delete= models.CASCADE ,blank= True)
-    nombre = User.username
-    apellido1 = models.CharField(max_length = 15,null = False)
-    apellido2 = models.CharField(max_length = 15,null = False)
-    fecha_nacimiento = models.DateField(null = False)
-    cp = models.CharField(max_length = 5,null = False)
-    dni = models.CharField(max_length = 9,null = False)
-    sexo = models.Choices

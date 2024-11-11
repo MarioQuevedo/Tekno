@@ -29,20 +29,19 @@
           </button>
           <ul class="nav justify-content-center">
             <li class="nav-item">
-              <a class="nav-link" href="/tekno/home">Home</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="/tekno/products">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Contact Us!</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="/tekno/about">About</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="/tekno/logout">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tekno/carrito">
+                <img src="{% static 'imagenes/carrito.png' %}" width="26" height="26">
+              </a>
             </li>
             {% else %}
             <li class="nav-item">
@@ -51,7 +50,17 @@
             <li class="nav-item">
               <a class="nav-link" href="/tekno/login">Register</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tekno/signin">
+                <img src="{% static 'imagenes/carrito.png' %}" width="26" height="26">
+              </a>
+            </li>
             {% endif %}
+            <li class="nav-item">
+              <a href="https://www.linkedin.com/in/mario-quevedo-blázquez-995a9b19a/">
+                <img src="{% static 'imagenes/linkedin.png' %}" alt="" width="40" height="40">
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -71,44 +80,6 @@
       <a href="/tekno/products">  
         <img src="{% static 'imagenes/banner_inicio.png' %}">
       </a>
-      <div class="accordion accordion-flush" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              <strong>Why Tekno</strong>
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" >
-            <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Accordion Item #2
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Accordion Item #3
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-      </div>
       {% if success == "false" %}
       <div class="alert alert-dismissible alert-success">
         <a href="/home/"></a>
@@ -117,7 +88,7 @@
         </div>
       {% endif %}
   </main>
-  {% endblock %}
+  {% endblock %}  
 </body>
 <script
   src="https://code.jquery.com/jquery-3.7.1.slim.js"

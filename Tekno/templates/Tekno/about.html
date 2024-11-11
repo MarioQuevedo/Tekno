@@ -1,0 +1,26 @@
+{% extends "tekno/index.html" %}
+{% load static %}
+{% block content %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <img class="imagen" src="{% static 'imagenes/fotomario.jpg' %}" alt="">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      <strong>WHO WE ARE</strong>
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+                    <div class="accordion-body">
+                      We are the <strong>BEST GAMING HARDWARE PROVIDER </strong>We look after your gaming <strong>needs. </strong><br>Even though there are <strong>tons </strong> of websites similar to us, we are still the best <strong>price</strong> you can find out there.
+                    </div>
+                  </div>
+                </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow= "75" aria-valuemin="0" aria-valuemax="100" style="width: 100% ;"></div>
+    </div>
+</div>
+{% endblock %}

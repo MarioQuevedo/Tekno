@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container-fluid">
 	<h1 class="gamingtitle">
-		⚡THE BEST HARDWARE!⚡
+		⚡THE GREATEST MONITORS!⚡
 	</h1>
     <fieldset>
         <form class="buscadorgame d-flex" method="get">
@@ -13,24 +13,29 @@
     </fieldset>
 	<p></p>  
     <div class="monitorrow row text-center">
-		{% for producto in productos %}		
+		{% for producto in productos %}
+		{% if producto.tipo == 'Monitor' %}		
 		<div class="col-lg-4">
 			<img class="monitores" style="border:5px solid #5cf0b2; padding:3px; margin:5px" src="{{producto.imagen.url}}" height="250" width="250">
 			<div class="box-element product">
 				<h4 class="nombremonitor"><strong>{{producto.nombre}}</strong></h4>
 				<h6 class="nombremonitor">{{producto.descripcion}}</h6>
-				<hr>
-
-				<button class="btn btn-outline-secondary add-btn">
-					<a href="">Add to cart</a>
+				{% if user.is_authenticated %}
+				<button class="btn btn-outline-secondary add-btn" style="margin-top: 7px;">
+					<a href="{% url 'carro:Add' producto.id_producto %}">Add to cart</a>
 				</button>
-				
-				<a class="btn btn-outline-success" href="#">View</a>
+				{% else %}
+				<button class="btn btn-outline-secondary add-btn" style="margin-top: 7px;">
+					<a href="/tekno/signin">Add to cart</a>
+				</button>
+				{% endif %}
 				<h4 class="nombremonitor"><strong>{{producto.precio}}€</strong></h4>
-
+				<h4 class="nombremonitor"><strong>Stock: {{producto.stock}} </strong></h4>
+				<hr>
 			</div>
 		</div>
+		{% endif %}
 		{% endfor %}
 	</div>
 </div>
-{% endblock %} 
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'tekno/index.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="alert alert-primary" role="alert">
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th scope="row" colspan="3" class="text-center">CARRITO</th>
+            </tr>
+            <tr>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">PRECIO</th>
+            <th scope="col">CANTIDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% if request.session.cart.items %}
+        {% for key, value in request.session.cart.items %}
+            <tr>
+            <td>{{value.name}}</td>
+            <td>{{value.price}}</td>
+            <td>{{value.quantity}}
+                <a href="{% url 'carro:Add' value.product_id %}" class="badge btn btn-dark badge-dark">+</a>
+                <a href="{% url 'carro:Sub' value.product_id %}" class="badge btn btn-dark badge-dark">-</a>
+            </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="3">
+                <div class="alert alert-danger text-center"> Sin Productos </div>
+            </td>
+        </tr>
+        {% endif %}
+            <tr>
+            <th scope="row">Total:</th>
+            <td colspan="2">$ {{total_carrito}}</td>
+            </tr>
+        </tbody>
+        </table>
+        <hr>
+        </div>
+        <div class="row text-center">
+            <div class="col-4"><a href="{% url 'carro:CLS' %}" class="btn btn-danger">Limpiar</a></div>
+            {% if request.session.cart.items %}
+            <div class ="col-6"> <a href="{% url 'pedido:procesar_pedido' %}"class="btn btn-success">Crear pedido</a></a></div>
+            {% endif %}
+        </div>
+    </div> 
+{% endblock %}

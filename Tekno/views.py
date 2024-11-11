@@ -5,15 +5,20 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 from .models import Producto
 from django.db.models import Q
+from carro.carro import Cart
 
 
 
 def home(request):
-    return render(request,"tekno/index.html")
+    carro = Cart(request)
+    productos = Producto.objects.all()
+    return render(request,"tekno/index.html",{
+        "productos" : productos
+    })
 
 
 def products(request):
-    return render(request,"tekno/products.html",{
+    return render(request,"tekno/gaming.html",{
         "errorNeedLogin" : "You must be logged in to view this site!"
     }) 
 
@@ -32,7 +37,6 @@ def signup(request):
     password1 = request.POST.get("password1")
     password2 = request.POST.get("password2")
     if password1 == password2:
-            # register user
         try:
             user = User.objects.create_user(username = username,password = password1,email=email,first_name = nombre,last_name = apellido) 
             user.save()
@@ -66,8 +70,8 @@ def signin(request):
         else:
             login(request,user)
             return redirect("home")
-        
-def gaming(request):
+
+def monitores(request):
     busqueda = request.GET.get("buscar")
     productos = Producto.objects.all()
     print(busqueda)
@@ -76,5 +80,35 @@ def gaming(request):
         productos = Producto.objects.filter(
             Q(nombre__icontains = busqueda)
         ).distinct()
-    return render(request,"tekno/gaming.html",{"productos" : productos})
+    return render(request,"tekno/monitores.html",{"productos" : productos})
+
+def perifericos(request):
+    busqueda = request.GET.get("buscar")
+    productos = Producto.objects.all()
+    
+    if busqueda:
+        productos = Producto.objects.filter(
+            Q(nombre__icontains = busqueda) |
+            Q(descripcion__icontains = busqueda)
+        ).distinct()
+    return render(request,"tekno/perifericos.html",{"productos" : productos})
+
+def pcs(request):
+    busqueda = request.GET.get("buscar")
+    productos = Producto.objects.all()
+    print(busqueda)
+    
+    if busqueda:
+        productos = Producto.objects.filter(
+            Q(nombre__icontains = busqueda)
+        ).distinct()
+    return render(request,"tekno/pcs.html",{"productos" : productos})
+
+def about(request):
+    return render(request,"tekno/about.html")
+
+
+def carrito(request):
+    return render(request,"tekno/carrito.html")
+
         

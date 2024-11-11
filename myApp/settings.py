@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
+from django.contrib.messages import constants as mensajes_de_error
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "Tekno.apps.TeknoConfig",
+    "django_extensions",
+    "pedidos",
+    "carro",
 ]
 
 MIDDLEWARE = [
@@ -64,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "carro.context_processor.total_carrito",
             ],
         },
     },
@@ -123,4 +128,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,"Tekno/static"),)
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+
